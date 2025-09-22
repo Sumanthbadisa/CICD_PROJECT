@@ -9,7 +9,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>3.5.5</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath/>
     </parent>
 
     <groupId>com.klu</groupId>
@@ -18,7 +18,7 @@
     <name>CICDPROJECTBackend</name>
     <description>Spring Boot project for CICD deployment</description>
 
-    <!-- **Important**: Set packaging to WAR -->
+    <!-- Important: packaging WAR -->
     <packaging>war</packaging>
 
     <properties>
@@ -26,13 +26,13 @@
     </properties>
 
     <dependencies>
-        <!-- Spring Boot Web -->
+        <!-- Spring Web -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!-- JPA -->
+        <!-- Spring Data JPA -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -58,7 +58,7 @@
             <optional>true</optional>
         </dependency>
 
-        <!-- DevTools for live reload (runtime) -->
+        <!-- DevTools -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
@@ -66,14 +66,14 @@
             <optional>true</optional>
         </dependency>
 
-        <!-- Spring Boot Test -->
+        <!-- Test -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
 
-        <!-- Optional: mark embedded Tomcat as provided -->
+        <!-- Provided Tomcat -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-tomcat</artifactId>
@@ -82,6 +82,9 @@
     </dependencies>
 
     <build>
+        <!-- Make WAR always deploy as ROOT.war -->
+        <finalName>ROOT</finalName>
+
         <plugins>
             <!-- Compiler plugin -->
             <plugin>
