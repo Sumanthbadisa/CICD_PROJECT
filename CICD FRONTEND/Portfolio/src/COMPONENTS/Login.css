@@ -55,4 +55,5 @@
 
 .login-inline-form button:hover {
   background: #0056b3;
+  border: 2px solid black
 }
